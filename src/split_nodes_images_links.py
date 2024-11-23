@@ -47,10 +47,3 @@ def split_nodes_link(old_nodes):
         if original_text != "":
             new_nodes.append(TextNode(original_text, TextType.TEXT))
     return new_nodes
-
-node = TextNode(
-    "This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev)",
-    TextType.TEXT,
-)
-
-new_nodes = split_nodes_link([node])
