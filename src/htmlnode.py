@@ -31,7 +31,7 @@ class LeafNode(HTMLNode):
 
     def to_html(self):
         if not self.value:
-            raise ValueError("no value found")
+            raise ValueError(f"no value found {self}")
         if not self.tag:
             return self.value
         html_props = self.props_to_html()
@@ -61,6 +61,12 @@ class ParentNode(HTMLNode):
             raise ValueError('no tags detected')
         if not self.children:
             raise ValueError('no children detected')
-        children_html = "".join(child.to_html() for child in self.children)
+        if self.tag == "code":
+            children_html = self.children[0].to_html()
+        else:
+            children_html = "".join(child.to_html() for child in self.children)
         return f"<{self.tag}{self.props_to_html()}>{children_html}</{self.tag}>"
+    
+    def __repr__(self):
+        return f'ParentNode(tag = {self.tag}, children = {self.children}, props = {self.props})'
     

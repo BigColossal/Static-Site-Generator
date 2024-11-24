@@ -9,7 +9,7 @@ def split_nodes_delimiter(old_nodes, delimiter, delimited_text_type):
         sections = old_node.text.split(delimiter)
         split_nodes = []
         if len(sections) % 2 == 0:
-            raise ValueError('Invalid markdown, markdown section')
+            raise ValueError(f'Invalid markdown, markdown section')
         for i in range(len(sections)):
             if sections[i] == "":
                 continue

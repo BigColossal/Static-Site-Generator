@@ -29,4 +29,4 @@ class TestTextnodeConversion(unittest.TestCase):
 
         node6 = TextNode('An image of the famous Mangu Plate', TextType.IMAGES, 'https://restauranteDominicano.com/photo10/')
         leaf_node6 = text_node_to_html_node(node6)
-        self.assertEqual(leaf_node6, LeafNode(tag = "img", value = '', props = {'src': 'https://restauranteDominicano.com/photo10/', 'alt': 'An image of the famous Mangu Plate'}))
+        self.assertEqual(leaf_node6, LeafNode(tag = "img", value = 'An image of the famous Mangu Plate', props = {'src': 'https://restauranteDominicano.com/photo10/'}))
