@@ -1,8 +1,7 @@
-from textnode import TextNode, TextType
-from htmlnode import LeafNode, HTMLNode, ParentNode
-from textnode_to_htmlnode import text_node_to_html_node
-from split_nodes_delimiter import split_nodes_delimiter
+from copy_to_public import copy_static_to_public
+from generate_page import generate_page
 
 def main():
-    pass
+    copy_static_to_public()
+    generate_page("content/index.md", "template.html", "public/index.html")
 main()
