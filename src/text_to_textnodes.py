@@ -11,7 +11,7 @@ def text_to_textnodes(text):
 
     code_nodes = split_nodes_delimiter(italic_nodes, '`', TextType.CODE)
 
-    image_nodes = split_nodes_image(code_nodes)
+    link_nodes = split_nodes_link(code_nodes)
 
-    final_nodes = split_nodes_link(image_nodes)
+    final_nodes = split_nodes_image(link_nodes)
     return final_nodes

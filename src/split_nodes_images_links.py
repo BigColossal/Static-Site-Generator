@@ -42,7 +42,7 @@ def split_nodes_link(old_nodes):
                 raise ValueError("Invalid markdown, image section not closed")
             if sections[0] != "":
                 new_nodes.append(TextNode(sections[0], TextType.TEXT))
-            new_nodes.append(TextNode(link[0], TextType.IMAGES, link[1]))
+            new_nodes.append(TextNode(link[0], TextType.LINKS, link[1]))
             original_text = sections[1]
         if original_text != "":
             new_nodes.append(TextNode(original_text, TextType.TEXT))

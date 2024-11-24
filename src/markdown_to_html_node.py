@@ -47,13 +47,13 @@ def produce_list_parent_nodes(block):
     return final_nodes
 
 def create_corresponding_leaf_nodes(lines, block_type):
+    already_cleaned = False
     if block_type == "code":
-        lines = clean_line(lines, block_type)
+        lines = clean_line(lines, block_type, already_cleaned)
         return LeafNode(None, lines)
     leaf_nodes = []
     if block_type == "normal":
         lines = [" ".join(lines),]
-    already_cleaned = False
     for line in lines:
         line, already_cleaned = clean_line(line, block_type, already_cleaned)
         text_nodes_created = text_to_textnodes(line)
